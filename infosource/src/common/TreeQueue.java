@@ -1,17 +1,13 @@
 package common;
 
-import java.util.ArrayList;
-
-public class TreeQueue {
-	private ArrayList<QueueEntry> Q = new ArrayList<QueueEntry> ();
-	
-	public TreeQueue () {
-		
+/*
+ * TreeQueue: a FIFO style queue for BFS
+ *            which supports functions to merge
+ *            entries and browse entries in the reversed order
+ *            from the last one 
+ */
+public class TreeQueue extends SimpleQueue {
+	public TreeQueue (int size) {
+		super(size);	
 	}
-	
-	public void add(Node n, int depth) {
-		Q.add(new QueueEntry (n, depth));
-	}
-	
-	public int size () { return Q.size(); }
 }

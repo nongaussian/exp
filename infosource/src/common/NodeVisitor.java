@@ -1,5 +1,5 @@
 package common;
 
-public interface Traveler {
+public interface NodeVisitor {
 	public void visit (Node root);
 }

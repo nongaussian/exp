@@ -5,6 +5,4 @@ public class QueueEntry {
 	public int depth;
 	
 	public QueueEntry (Node n, int depth) { this.n = n; this.depth = depth; }
-	
-	
 }
