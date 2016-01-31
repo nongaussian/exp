@@ -1,0 +1,7 @@
+# SimulatePropagation
+# usage: <input / output file prefix> <# of vertexes> <prob. of propagation>
+dat/test1 8 0.5
+
+# NaiveInfosource
+# usage: <input data prefix> <# of vertexes> <infection prob>
+dat/test1 8 0.5 8

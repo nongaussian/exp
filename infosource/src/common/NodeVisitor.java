@@ -1,5 +1,5 @@
 package common;
 
 public interface NodeVisitor {
-	public void visit (Node root);
+	public boolean visit (Node n, int[] depth);
 }

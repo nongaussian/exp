@@ -2,7 +2,7 @@ package common;
 
 public class SimpleQueue {
 	private Node[] Q = null;
-	private int[] depth = null;
+	public int[] depth = null;
 	private int first = 0;
 	private int last = 0;
 	
@@ -18,6 +18,14 @@ public class SimpleQueue {
 	}
 	
 	public int size () { return last; }
+	
+	public boolean is_full () {
+		return last == Q.length;
+	}
+	
+	public boolean is_empty () {
+		return last == first;
+	}
 
 	public boolean is_visited (Node  n) {
 		return is_visited(n.id);

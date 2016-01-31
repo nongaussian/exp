@@ -13,8 +13,8 @@ public class InfosourceDetector {
 	
 	// compute log-likelihood with our algorithm
 	public class ComputeLikelihood implements NodeVisitor {
-		public void visit (Node root) {
-			
+		public boolean visit (Node root, int[] depth) {
+			return true;
 		}
 	}
 

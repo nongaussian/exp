@@ -4,7 +4,9 @@ public class Node {
 	public int id;
 	public Node[] neighbors = null;
 	public int idx = 0;
-	public NodeState state;
+	
+	public int is_infected = 0;
+	public int is_source = 0;
 	
 	public Node (int id) { this.id = id; }
 	
@@ -17,16 +19,11 @@ public class Node {
 		neighbors[idx++] = n;
 	}
 	
-	public void set_state (NodeState st) {
-		this.state = st;
+	public void set_state (int st) {
+		this.is_infected = st;
 	}
 	
-	public int n_infected_parents (SimpleQueue queue) {
-		int count = 0;
-		for (Node n: neighbors) {
-			if (queue.depth(n.id) <= queue.depth(id))
-				count++;
-		}
-		return count;
+	public void set_source (int st) {
+		this.is_source = st;
 	}
 }
