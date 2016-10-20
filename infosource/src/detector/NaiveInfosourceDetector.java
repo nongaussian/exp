@@ -7,7 +7,7 @@ import common.Graph;
 import common.Node;
 import common.NodeVisitor;
 import common.Precal;
-import common.SimpleQueue;;
+import common.SimpleQueue;
 
 public class NaiveInfosourceDetector {
 	private Graph g = null;
