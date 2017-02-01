@@ -44,7 +44,7 @@ public class NaiveInfosourceDetector {
 			this.g = g;
 		}
 
-		// for each node, compute the likelihood that the node is the source
+		// for each node, compute the likelihood under the assumption that the node is the source
 		public boolean visit(Node n, int[] depth) {
 			ComputeLikelihood visitor = new ComputeLikelihood(n.id);
 			g.traverse(n, 
@@ -83,10 +83,13 @@ public class NaiveInfosourceDetector {
 			else {
 				int count = 0;
 				
-				// count infected parents
+				// sum the depth of infected parents
 				for (Node neigh: n.neighbors) {
-					if (depth[neigh.id] <= depth[n.id] && neigh.is_infected == 1)
-						count++;
+					
+					// XXX: here, the last point where I quit
+					//  --- if neigh is a parent ----- && -- if it is infected -
+					//if (depth[neigh.id] <= depth[n.id] && neigh.is_infected == 1)
+					//	count += ;
 				}
 				
 				if (count == 0 && n.is_infected > 0) return false;

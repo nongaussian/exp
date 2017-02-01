@@ -77,7 +77,7 @@ public class SimulatePropagation {
 		
 		g.traverse(g.nodes[root], new SimpleQueue(g.size), new PropagateInfection(p));
 		
-		// print out
+		// print out: <node id> tab <infected or not> tab <root or not>
 		try {
 			PrintStream out = new PrintStream(new FileOutputStream(prefix + ".stt"));
 			for (Node v: g.nodes) {

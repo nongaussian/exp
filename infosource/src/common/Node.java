@@ -6,7 +6,7 @@ public class Node {
 	public int idx = 0;
 	
 	public int is_infected = 0;
-	public int is_source = 0;
+	//public int is_source = 0;
 	
 	public Node (int id) { this.id = id; }
 	
@@ -23,7 +23,7 @@ public class Node {
 		this.is_infected = st;
 	}
 	
-	public void set_source (int st) {
-		this.is_source = st;
-	}
+//	public void set_source (int st) {
+//		this.is_source = st;
+//	}
 }

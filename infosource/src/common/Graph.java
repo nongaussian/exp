@@ -33,7 +33,7 @@ public class Graph {
 	 * Graph traverse
 	 */
 	
-	// traverse the graph with BFS
+	// traverse the graph with BFS; calling traverse with a node visitor t executes t.visit for every node
 	public void traverse (Node root, SimpleQueue queue, NodeVisitor t) {
 		if (root == null) {
 			System.err.println("error: root is not set");
@@ -76,6 +76,10 @@ public class Graph {
 						nodes[id].add_neighbor(nodes[Integer.parseInt(arr[i])]);
 					}
 				}
+				else {
+					System.err.println("error: inconsistent number of neighboring nodes");
+					System.exit(1);
+				}
 			}
 			br.close();
 		} catch (Exception e) {
@@ -91,7 +95,10 @@ public class Graph {
 				String[] arr = thisLine.split("\t");
 				int id = Integer.parseInt(arr[0]);
 				nodes[id].is_infected = Integer.parseInt(arr[1]);
-				nodes[id].is_source = Integer.parseInt(arr[2]);
+				//nodes[id].is_source = Integer.parseInt(arr[2]);
+				if (Integer.parseInt(arr[2]) == 1) {
+					infosource = id;
+				}
 			}
 			br.close();
 		} catch (Exception e) {
